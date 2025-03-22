@@ -1,10 +1,6 @@
-
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { 
-  Home, Search, Bell, MessageCircle, User, Heart, 
-  BookmarkCheck, Settings, HelpCircle, LogOut, X 
-} from 'lucide-react';
+import { X } from 'lucide-react';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -42,22 +38,6 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
 
   if (!mounted) return null;
 
-  const menuItems = [
-    { icon: Home, label: 'Home' },
-    { icon: Search, label: 'Search' },
-    { icon: Bell, label: 'Notifications' },
-    { icon: MessageCircle, label: 'Messages' },
-    { icon: User, label: 'Profile' },
-    { icon: Heart, label: 'My Likes' },
-    { icon: BookmarkCheck, label: 'Saved' },
-  ];
-
-  const secondaryItems = [
-    { icon: Settings, label: 'Settings' },
-    { icon: HelpCircle, label: 'Help' },
-    { icon: LogOut, label: 'Logout' },
-  ];
-
   return (
     <>
       {/* Backdrop */}
@@ -90,43 +70,11 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
           </button>
         </div>
 
-        <nav className="flex-1 p-4">
-          <ul className="space-y-2">
-            {menuItems.map((item, index) => (
-              <li key={index}>
-                <a 
-                  href="#" 
-                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-sidebar-accent transition-colors"
-                >
-                  <item.icon size={20} />
-                  <span>{item.label}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <div className="h-px bg-sidebar-border my-6" />
-
-          <ul className="space-y-2">
-            {secondaryItems.map((item, index) => (
-              <li key={index}>
-                <a 
-                  href="#" 
-                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-sidebar-accent transition-colors text-sidebar-foreground/80"
-                >
-                  <item.icon size={20} />
-                  <span>{item.label}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <div className="p-4 border-t border-sidebar-border">
-          <div className="rounded-lg bg-sidebar-accent p-4">
-            <p className="text-sm text-sidebar-foreground/80">Logged in as</p>
-            <p className="font-medium">User</p>
-          </div>
+        <div className="flex-1 p-4">
+          {/* Sidebar content will be added later */}
+          <p className="text-center text-sidebar-foreground/50 mt-8">
+            Sidebar features will be added later
+          </p>
         </div>
       </aside>
     </>
