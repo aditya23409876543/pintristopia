@@ -23,7 +23,7 @@ const Header = ({ onSidebarToggle }: HeaderProps) => {
             <Menu size={20} />
           </button>
           
-          <a href="/" className="font-semibold text-lg">Pintristopia</a>
+          <a href="/" className="font-semibold text-lg">Marketplace</a>
         </div>
         
         <div className={cn(

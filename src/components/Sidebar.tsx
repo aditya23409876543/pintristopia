@@ -80,7 +80,7 @@ const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
         )}
       >
         <div className="sticky top-0 z-10 flex items-center justify-between p-4 backdrop-blur-md bg-sidebar/90 border-b border-sidebar-border">
-          <h2 className="text-xl font-semibold">Pintristopia</h2>
+          <h2 className="text-xl font-semibold">Marketplace</h2>
           <button 
             onClick={onClose}
             className="rounded-full p-2 hover:bg-sidebar-accent transition-colors"
