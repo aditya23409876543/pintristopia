@@ -14,16 +14,23 @@ interface ImageItem {
 // Generate images with varying aspect ratios
 const generateImages = (count: number): ImageItem[] => {
   const images = [];
-  const categories = ['nature', 'architecture', 'food', 'travel', 'fashion', 'art'];
+  const categories = [
+    'nature', 'architecture', 'food', 'travel', 'fashion', 'art',
+    'animals', 'technology', 'interior', 'cars', 'people', 'abstract',
+    'plants', 'space', 'underwater', 'sports', 'vintage', 'minimal'
+  ];
   
   for (let i = 1; i <= count; i++) {
     const category = categories[Math.floor(Math.random() * categories.length)];
     const width = 800;
     const height = Math.floor(Math.random() * 400) + 400; // Random height between 400 and 800
     
+    // Add random number to avoid caching and get truly random images
+    const randomParam = Math.floor(Math.random() * 1000);
+    
     images.push({
       id: i,
-      src: `https://source.unsplash.com/random/${width}x${height}?${category}`,
+      src: `https://source.unsplash.com/random/${width}x${height}?${category}&sig=${randomParam}`,
       title: `${category.charAt(0).toUpperCase() + category.slice(1)} Image ${i}`,
       aspectRatio: height / width * 100
     });
@@ -38,7 +45,7 @@ const ImageGrid = () => {
   
   useEffect(() => {
     // Generate random images
-    setImages(generateImages(24));
+    setImages(generateImages(36)); // Increased from 24 to 36 images
     setLoading(false);
   }, []);
   
